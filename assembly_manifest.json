@@ -1,0 +1,17 @@
+{
+  "run_id": "tennislessons-vancouver-001",
+  "template": "single",
+  "generated_files": [
+    "index.html",
+    "terms/index.html",
+    "privacy/index.html"
+  ],
+  "total_pages": 1,
+  "image_count": 14,
+  "all_urls": [
+    "/",
+    "/terms/",
+    "/privacy/"
+  ],
+  "assembled_at": "2026-05-20T20:22:48.350486+00:00"
+}

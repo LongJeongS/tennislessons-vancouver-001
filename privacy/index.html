@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | Your Tennis Lessons Vancouver</title>
+  <meta name="description" content="Privacy policy for https://tennislessonsvancouver.ca, operated by InView Marketing.">
+  <link rel="canonical" href="https://tennislessonsvancouver.caprivacy/">
+  <meta name="robots" content="noindex,follow">
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+   _shared.css — Shared design system injected into every template
+   Injected by stage4_assemble.py via shared_css pre-injection.
+   All design tokens are resolved in the same pass as
+   the rest of the template.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── DESIGN TOKENS ──────────────────────────────────────────────────────────── */
+:root {
+  --color-primary:   #1B6B47;
+  --color-accent:    #2F5594;
+  --color-bg:        #FFFFFF;
+  --color-text:      #1A1A1A;
+  --font-heading:    'Nunito', Georgia, serif;
+  --font-body:       'Open Sans', system-ui, sans-serif;
+  --white:           #ffffff;
+  --border:          #e0dbd2;
+  --text-mid:        #444444;
+  --text-light:      #777777;
+  --shadow-sm:       0 2px 12px rgba(0,0,0,0.07);
+  --shadow-md:       0 4px 20px rgba(0,0,0,0.14);
+  --radius:          6px;
+  --max-w:           1200px;
+  --transition:      0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ── RESET & BASE ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--white);
+}
+
+/* Prevent layout-breaking overflow on long words (long URLs, no-space content) */
+p, li, td, .section-subtitle, .team-bio, .testimonial-quote, .faq-answer-inner {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ── LAYOUT UTILITIES ───────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-pad        { padding: 72px 0; }
+.section-pad-sm     { padding: 48px 0; }
+.section-pad-accent { padding: 40px 0; } /* Compact accent bands: trust-band, stats-bar */
+
+/* ── TYPOGRAPHY HELPERS ─────────────────────────────────────────────────────── */
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-mid);
+  max-width: 560px;
+}
+
+/* ── BUTTONS ────────────────────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 50px;
+  padding: 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition), filter var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.btn:hover  { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary { background: var(--color-accent); color: var(--white); }
+.btn-primary:hover { filter: brightness(0.88); }
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.7);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition), border-color var(--transition);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+
+.btn-outline-dark {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius);
+  display: inline-flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition);
+}
+.btn-outline-dark:hover { background: var(--color-primary); color: var(--white); }
+
+/* ── CTA BAND — SHARED STRUCTURAL STYLES ────────────────────────────────────── */
+#cta-band { padding: 40px 0; }
+
+/* Band layout variant (home / about) */
+.cta-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.cta-band-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.cta-band-sub { font-size: 16px; color: rgba(255,255,255,0.75); margin-top: 6px; }
+
+.cta-band-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.cta-band-phone {
+  color: rgba(255,255,255,0.9);
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Centered band variant (service / reviews / faq / area / contact) */
+.cta-band-btn {
+  display: inline-flex;
+  align-items: center;
+  height: 52px;
+  padding: 0 32px;
+  background: var(--white);
+  color: var(--color-accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+}
+.cta-band-btn:hover { background: rgba(255,255,255,0.9); transform: translateY(-1px); }
+
+/* CTA-band scope override: when .btn-primary appears inside the dark green band,
+   invert to white-background-with-primary-text for maximum contrast. The default
+   .btn-primary (accent-colored) lacks contrast against the primary-colored band
+   when accent and primary sit at similar luminance. */
+#cta-band .btn-primary {
+  background: var(--white);
+  color: var(--color-primary);
+}
+#cta-band .btn-primary:hover {
+  background: rgba(255,255,255,0.9);
+  filter: none;
+}
+
+/* Hide area cards/pills that have no content — happens on sites with fewer
+   than 10 service areas. The home/single templates hard-code 10 slots; these
+   selectors elide any that didn't get populated. */
+.area-card[data-area=""] { display: none; }
+.area-pill:empty { display: none; }
+
+/* Hide trust-items with empty labels (sites that want fewer than 4 badges leave
+   slots blank in stage2.trust_badges); collapse the grid from 4 → 3 columns
+   when one is hidden so the visible items stay evenly distributed. */
+.trust-item:has(strong:empty) { display: none; }
+.trust-grid:has(.trust-item:has(strong:empty)) { grid-template-columns: repeat(3, 1fr); }
+
+/* ── NAVIGATION ─────────────────────────────────────────────────────────────── */
+#site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  gap: 16px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  max-width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav-logo-text span { color: var(--color-accent); }
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"],
+.nav-links a[aria-current] { background: rgba(255,255,255,0.1); color: var(--white); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.nav-phone {
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-phone svg { flex-shrink: 0; }
+
+/* Mobile hamburger */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 12px;
+  background: none;
+  border: none;
+  margin-left: auto;
+}
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+/* Hamburger → X animation */
+.nav-hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Services Dropdown ── */
+.nav-dropdown { position: relative; }
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+  font-family: inherit;
+  line-height: 1;
+}
+.nav-dropdown-trigger:hover,
+.nav-dropdown[data-open] .nav-dropdown-trigger {
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+.nav-chevron {
+  transition: transform var(--transition);
+  flex-shrink: 0;
+}
+.nav-dropdown[data-open] .nav-chevron { transform: rotate(180deg); }
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  max-width: calc(100vw - 24px); /* prevent right-edge clipping on narrow viewports */
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  padding: 6px 0;
+  z-index: 100;
+  list-style: none;
+  margin: 0;
+  /* Closed state — fade + slide up */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  visibility: hidden;
+  transition:
+    opacity 150ms cubic-bezier(0.25, 1, 0.5, 1),
+    transform 150ms cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0s linear 150ms;
+}
+.nav-dropdown[data-open] .nav-dropdown-menu {
+  /* Open state — fade + slide down */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+  transition:
+    opacity 200ms cubic-bezier(0.25, 1, 0.5, 1),
+    transform 200ms cubic-bezier(0.25, 1, 0.5, 1),
+    visibility 0s linear 0s;
+}
+.nav-dropdown-menu li { list-style: none; }
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 18px;
+  color: var(--text-dark);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition);
+}
+.nav-dropdown-menu a:hover {
+  background: rgba(0,0,0,0.04);
+  color: var(--color-primary);
+}
+
+/* Mobile menu */
+.nav-mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--color-primary);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 12px 0 20px;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  color: rgba(255,255,255,0.85);
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.nav-mobile-menu .mobile-cta { margin: 12px 24px 0; }
+
+/* ── FOOTER ─────────────────────────────────────────────────────────────────── */
+#site-footer {
+  background: var(--color-primary);
+  color: rgba(255,255,255,0.75);
+}
+
+.footer-top { padding: 56px 0 40px; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  margin-bottom: 18px;
+}
+/* Item 1: Footer brand link (company name links to homepage from every sub-page). */
+.footer-brand-link {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--transition);
+}
+.footer-brand-link:hover { opacity: 0.75; }
+.footer-col p { font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  transition: color var(--transition);
+}
+.footer-col ul li a:hover { color: var(--white); }
+
+.footer-nap { font-size: 13px; line-height: 1.9; color: rgba(255,255,255,0.65); }
+
+.footer-social { display: flex; gap: 10px; margin-top: 16px; }
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.footer-social a:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.4);
+  color: var(--white);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ── MOBILE FLOATING CTA ────────────────────────────────────────────────────── */
+#mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 888;
+  background: var(--color-accent);
+  color: var(--white);
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -3px 16px rgba(0,0,0,0.18);
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ── SHARED COMPONENTS ──────────────────────────────────────────────────────── */
+
+/* Testimonial cards (used by home, about, area) */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.testimonial-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+/* Item 3: .stars rule removed — per-testimonial star displays were a fake-rating surface. */
+
+.testimonial-quote {
+  font-size: 16px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.author-name  { font-weight: 700; font-size: 14px; color: var(--color-text); }
+.author-location { font-size: 12px; color: var(--text-light); }
+
+/* Team cards (used by home, about) */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.team-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--color-bg);
+  transition: box-shadow var(--transition);
+}
+.team-card:hover { box-shadow: var(--shadow-md); }
+
+.team-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 16px;
+  background: var(--color-bg);
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.team-name  { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.team-role  { font-size: 13px; color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+.team-bio   { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+/* ── ACCESSIBILITY ──────────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Skip navigation link — visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  padding: 8px 16px;
+  background: var(--color-primary);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius);
+  z-index: 9999;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ── BASE RESPONSIVE ────────────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+  /* Footer: NAP spans full width, 3 link columns sit in a row beneath */
+  .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .footer-col:first-child { grid-column: 1 / -1; }
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 48px 0; }
+
+  /* Nav */
+  .nav-links, .nav-phone, .nav-actions .btn { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* CTA band */
+  .cta-band-inner  { flex-direction: column; text-align: center; }
+  .cta-band-actions { flex-direction: column; width: 100%; }
+  .cta-band-actions .btn { width: 100%; }
+
+  /* Team */
+  .team-grid { grid-template-columns: 1fr; max-width: 400px; }
+
+  /* Testimonials */
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  /* Mobile floating CTA */
+  #mobile-cta { display: flex; }
+  body { padding-bottom: 58px; }
+}
+
+/* ── SERVICE AREAS GRID ─────────────────────────────────────────────────── */
+#service-areas { background: var(--color-bg); }
+
+.areas-header { text-align: center; margin-bottom: 36px; }
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.area-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 18px;
+  background: var(--color-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform var(--transition), box-shadow var(--transition),
+              border-color var(--transition), color var(--transition);
+}
+.area-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.area-card:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.area-card[data-area=""] { display: none; }
+
+.area-card-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.area-card-arrow {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+.area-card:hover .area-card-arrow { transform: translateX(3px); }
+
+/* ── Form thank-you state ──────────────────────────────────────────────────── */
+.form-thank-you { display:none; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:48px 24px; gap:16px; min-height:200px; }
+.form-thank-you-icon { width:56px; height:56px; border-radius:50%; background:var(--color-accent); display:flex; align-items:center; justify-content:center; color:var(--white); flex-shrink:0; }
+.form-thank-you h3 { font-size:22px; margin:0; }
+.form-thank-you p  { color:var(--text-mid); font-size:15px; max-width:360px; margin:0; }
+.form-thank-you a  { color:var(--color-primary); font-weight:600; }
+
+    .legal-hero { background: var(--color-primary); color: var(--white); padding: 80px 0 48px; }
+    .legal-hero .container { max-width: 800px; }
+    .legal-hero h1 { font-size: clamp(28px, 5vw, 44px); color: var(--white); margin-bottom: 8px; }
+    .legal-meta { font-size: 14px; color: rgba(255,255,255,0.75); }
+    .legal-meta a { color: var(--color-accent); text-decoration: underline; }
+    .legal-body { padding: 56px 0; background: var(--white); }
+    .legal-body .container { max-width: 800px; font-size: 16px; line-height: 1.75; color: var(--color-text); }
+    .legal-body h2 { font-size: 22px; margin: 40px 0 14px; color: var(--color-primary); }
+    .legal-body .legal-summary { font-style: italic; color: var(--text-mid); margin-bottom: 12px; }
+    .legal-body p { margin: 0 0 16px; }
+    .legal-body ul { margin: 0 0 16px 24px; }
+    .legal-body li { margin-bottom: 8px; }
+    .legal-body a { color: var(--color-primary); text-decoration: underline; }
+    .legal-toc { background: var(--color-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 32px; }
+    .legal-toc h2 { margin-top: 0; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-mid); }
+    .legal-toc ol { margin: 0 0 0 24px; }
+    .legal-toc li { margin-bottom: 6px; font-size: 14px; }
+  </style>
+  
+</head>
+<body>
+<a href="#page-content" class="skip-link">Skip to main content</a>
+<header id="site-nav" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="/" class="nav-logo" aria-label="Go to homepage"><span style="display:flex;align-items:center;gap:10px;line-height:1"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0"><circle cx="16" cy="16" r="11" fill="#D9E021"/><path d="M 6 11 Q 13 16 6 21" stroke="white" stroke-width="1.6" stroke-linecap="round" fill="none"/><path d="M 26 11 Q 19 16 26 21" stroke="white" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg><span style="display:flex;flex-direction:column;gap:1px;flex-shrink:1"><span style="font-family:'Nunito',serif;font-size:10px;font-weight:700;letter-spacing:0.14em;color:rgba(255,255,255,0.75);line-height:1;white-space:nowrap">YOUR TENNIS LESSONS</span><span style="font-family:'Nunito',serif;font-size:15px;font-weight:800;letter-spacing:0.06em;color:#FFFFFF;line-height:1;white-space:nowrap">VANCOUVER</span></span></span></a>
+      <ul class="nav-links" role="list">
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" onclick="toggleServicesMenu(event)">
+            Services
+            <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="nav-dropdown-menu" role="list">
+            <li><a href="/services/private-1-on-1-lessons/" onclick="closeServicesMenu()">Private 1-on-1 Lessons</a></li>
+            <li><a href="/services/group-tennis-classes/" onclick="closeServicesMenu()">Group Tennis Classes</a></li>
+            <li><a href="/services/kids-junior-programs/" onclick="closeServicesMenu()">Kids & Junior Programs</a></li>
+            <li><a href="/services/adult-beginner-clinics/" onclick="closeServicesMenu()">Adult Beginner Clinics</a></li>
+          </ul>
+        </li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li><li><a href="/cost-guides/tennis-lessons-cost-vancouver/">Price Guide</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:+1 (226) 212-0631" class="nav-phone" aria-label="Call us"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+1 (226) 212-0631</a>
+        <a href="/contact/" class="btn btn-primary">Book a Lesson</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <nav class="nav-mobile-menu" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="/services/private-1-on-1-lessons/" onclick="closeMenu()">Private 1-on-1 Lessons</a>
+    <a href="/services/group-tennis-classes/" onclick="closeMenu()">Group Tennis Classes</a>
+    <a href="/services/kids-junior-programs/" onclick="closeMenu()">Kids & Junior Programs</a>
+    <a href="/services/adult-beginner-clinics/" onclick="closeMenu()">Adult Beginner Clinics</a>
+    <a href="/about/" onclick="closeMenu()">About</a>
+    <a href="/reviews/" onclick="closeMenu()">Reviews</a>
+    <a href="/faq/" onclick="closeMenu()">FAQ</a>
+    <a href="/blog/" onclick="closeMenu()">Blog</a>
+    <a href="/contact/" onclick="closeMenu()">Contact</a>
+    <a href="tel:+1 (226) 212-0631" onclick="closeMenu()" style="display:flex;align-items:center;gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>+1 (226) 212-0631</a>
+    <a href="/contact/" class="btn btn-primary mobile-cta" onclick="closeMenu()">Book a Lesson</a>
+  </nav>
+</header>
+
+<main id="page-content" style="margin-top:80px;" aria-label="Privacy Policy">
+
+  <section class="legal-hero">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="legal-meta">Site: <strong>https://tennislessonsvancouver.ca</strong> · Operator: <strong>InView Marketing</strong> · Last Updated: <strong>May 20, 2026</strong></p>
+    </div>
+  </section>
+
+  <section class="legal-body">
+    <div class="container">
+
+      <p>Thank you for choosing to be part of our community at InView Marketing ("Company", "we", "us", "our"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about this privacy notice, or our practices with regards to your personal information, please contact us at <a href="mailto:blake.gmb@gmail.com">blake.gmb@gmail.com</a>.</p>
+      <p>When you visit our website https://tennislessonsvancouver.ca (the "Website"), and more generally, use any of our services (the "Services", which include the Website), we appreciate that you are trusting us with your personal information. We take your privacy very seriously. In this privacy notice, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it. We hope you take some time to read through it carefully, as it is important. If there are any terms in this privacy notice that you do not agree with, please discontinue use of our Services immediately.</p>
+      <p>This privacy notice applies to all information collected through our Services (which, as described above, includes our Website), as well as, any related services, sales, marketing or events.</p>
+      <p>Please read this privacy notice carefully as it will help you understand what we do with the information that we collect.</p>
+
+      <div class="legal-toc">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li>What Information Do We Collect?</li>
+          <li>Will Your Information Be Shared With Anyone?</li>
+          <li>Do We Use Cookies and Other Tracking Technologies?</li>
+          <li>How Long Do We Keep Your Information?</li>
+          <li>How Do We Keep Your Information Safe?</li>
+          <li>Do We Collect Information From Minors?</li>
+          <li>What Are Your Privacy Rights?</li>
+          <li>Controls for Do-Not-Track Features</li>
+          <li>Do California Residents Have Specific Privacy Rights?</li>
+          <li>Do We Make Updates To This Notice?</li>
+          <li>How Can You Contact Us About This Notice?</li>
+          <li>How Can You Review, Update, or Delete the Data We Collect From You?</li>
+        </ol>
+      </div>
+
+      <h2>1. What Information Do We Collect?</h2>
+      <p class="legal-summary"><em>In Short: We collect personal information that you provide to us.</em></p>
+      <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and Services when you participate in activities on the Website or otherwise when you contact us.</p>
+      <p>The personal information that we collect depends on the context of your interactions with us and the Website, the choices you make, and the products and features you use. The personal information we collect may include the following:</p>
+      <p><strong>Personal Information Provided by You.</strong> We collect purchase history; and other similar information.</p>
+      <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+
+      <h2>2. Will Your Information Be Shared With Anyone?</h2>
+      <p class="legal-summary"><em>In Short: We only share information with your consent, to comply with laws, to provide you with services, to protect your rights, or to fulfill business obligations.</em></p>
+      <p>We may process or share your data that we hold based on the following legal basis:</p>
+      <ul>
+        <li><strong>Consent:</strong> We may process your data if you have given us specific consent to use your personal information for a specific purpose.</li>
+        <li><strong>Legitimate Interests:</strong> We may process your data when it is reasonably necessary to achieve our legitimate business interests.</li>
+        <li><strong>Performance of a Contract:</strong> Where we have entered into a contract with you, we may process your personal information to fulfill the terms of our contract.</li>
+        <li><strong>Legal Obligations:</strong> We may disclose your information where we are legally required to do so in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal process, such as in response to a court order or a subpoena (including in response to public authorities to meet national security or law enforcement requirements).</li>
+        <li><strong>Vital Interests:</strong> We may disclose your information where we believe it is necessary to investigate, prevent, or take action regarding potential violations of our policies, suspected fraud, situations involving potential threats to the safety of any person and illegal activities, or as evidence in litigation in which we are involved.</li>
+      </ul>
+      <p>More specifically, we may need to process your data or share your personal information in the following situations:</p>
+      <ul>
+        <li><strong>Business Transfers.</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+        <li><strong>Google Maps Platform APIs.</strong> We may share your information with certain Google Maps Platform APIs (e.g., Google Maps API, Place API). We use certain Google Maps Platform APIs to retrieve certain information when you make location-specific requests. We obtain and store on your device ('cache') your location for 12 months. You may revoke your consent anytime by contacting us at the contact details provided at the end of this document. The Google Maps Platform APIs that we use store and access cookies and other information on your devices.</li>
+      </ul>
+
+      <h2>3. Do We Use Cookies and Other Tracking Technologies?</h2>
+      <p class="legal-summary"><em>In Short: We may use cookies and other tracking technologies to collect and store your information.</em></p>
+      <p>We may use cookies and similar tracking technologies (like web beacons and pixels) to access or store information. Specific information about how we use such technologies and how you can refuse certain cookies is set out in our Cookie Notice.</p>
+
+      <h2>4. How Long Do We Keep Your Information?</h2>
+      <p class="legal-summary"><em>In Short: We keep your information for as long as necessary to fulfill the purposes outlined in this privacy notice unless otherwise required by law.</em></p>
+      <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice, unless a longer retention period is required or permitted by law (such as tax, accounting or other legal requirements). No purpose in this notice will require us keeping your personal information for longer than 1 year.</p>
+      <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+
+      <h2>5. How Do We Keep Your Information Safe?</h2>
+      <p class="legal-summary"><em>In Short: We aim to protect your personal information through a system of organizational and technical security measures.</em></p>
+      <p>We have implemented appropriate technical and organizational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorized third parties will not be able to defeat our security, and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our Website is at your own risk. You should only access the Website within a secure environment.</p>
+
+      <h2>6. Do We Collect Information From Minors?</h2>
+      <p class="legal-summary"><em>In Short: We do not knowingly collect data from or market to children under 18 years of age.</em></p>
+      <p>We do not knowingly solicit data from or market to children under 18 years of age. By using the Website, you represent that you are at least 18 or that you are the parent or guardian of such a minor and consent to such minor dependent's use of the Website. If we learn that personal information from users less than 18 years of age has been collected, we will deactivate the account and take reasonable measures to promptly delete such data from our records. If you become aware of any data we may have collected from children under age 18, please contact us at <a href="mailto:blake.gmb@gmail.com">blake.gmb@gmail.com</a>.</p>
+
+      <h2>7. What Are Your Privacy Rights?</h2>
+      <p class="legal-summary"><em>In Short: You may review, change, or terminate your account at any time.</em></p>
+      <p>If you are a resident in the EEA or UK and you believe we are unlawfully processing your personal information, you also have the right to complain to your local data protection supervisory authority. You can find their contact details here: <a href="http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm">http://ec.europa.eu/justice/data-protection/bodies/authorities/index_en.htm</a>.</p>
+      <p>If you are a resident in Switzerland, the contact details for the data protection authorities are available here: <a href="https://www.edoeb.admin.ch/edoeb/en/home.html">https://www.edoeb.admin.ch/edoeb/en/home.html</a>.</p>
+      <p><strong>Cookies and similar technologies:</strong> Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services of our Website. To opt-out of interest-based advertising by advertisers on our Website visit <a href="http://www.aboutads.info/choices/">http://www.aboutads.info/choices/</a>.</p>
+
+      <h2>8. Controls for Do-Not-Track Features</h2>
+      <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.</p>
+
+      <h2>9. Do California Residents Have Specific Privacy Rights?</h2>
+      <p class="legal-summary"><em>In Short: Yes, if you are a resident of California, you are granted specific rights regarding access to your personal information.</em></p>
+      <p>California Civil Code Section 1798.83, also known as the "Shine The Light" law, permits our users who are California residents to request and obtain from us, once a year and free of charge, information about categories of personal information (if any) we disclosed to third parties for direct marketing purposes and the names and addresses of all third parties with which we shared personal information in the immediately preceding calendar year. If you are a California resident and would like to make such a request, please submit your request in writing to us using the contact information provided below.</p>
+      <p>If you are under 18 years of age, reside in California, and have a registered account with the Website, you have the right to request the removal of unwanted data that you publicly post on the Website. To request the removal of such data, please contact us using the contact information provided below, and include the email address associated with your account and a statement that you reside in California. We will make sure the data is not publicly displayed on the Website, but please be aware that the data may not be completely or comprehensively removed from all our systems (e.g. backups, etc.).</p>
+
+      <h2>10. Do We Make Updates To This Notice?</h2>
+      <p class="legal-summary"><em>In Short: Yes, we will update this notice as necessary to stay compliant with relevant laws.</em></p>
+      <p>We may update this privacy notice from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</p>
+
+      <h2>11. How Can You Contact Us About This Notice?</h2>
+      <p>If you have questions or comments about this notice, you may email us at <a href="mailto:blake.gmb@gmail.com">blake.gmb@gmail.com</a> or by post to:</p>
+      <p>
+        InView Marketing<br>
+        9131 Keele St Suite A4<br>
+        Vaughan, ON L4K 0G7<br>
+        Canada
+      </p>
+
+      <h2>12. How Can You Review, Update, or Delete the Data We Collect From You?</h2>
+      <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it in some circumstances. To request to review, update, or delete your personal information, please contact us at the email address listed in Section 11.</p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer id="site-footer" role="contentinfo">
+  <div class="footer-top"><div class="container"><div class="footer-grid">
+    <div class="footer-col"><h4><a href="/" class="footer-brand-link">Your Tennis Lessons Vancouver</a></h4><p>Tennis lessons in Vancouver with Tennis Canada TPA certified coaches. Serving Vancouver, North Vancouver, West Vancouver, Burnaby, Richmond, and New Westminster.</p><address class="footer-nap" style="font-style:normal;"><span>Vancouver, British Columbia</span><br><a href="tel:+1 (226) 212-0631" style="color:rgba(255,255,255,0.65);">+1 (226) 212-0631</a></address></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/private-1-on-1-lessons/">Private 1-on-1 Lessons</a></li><li><a href="/services/group-tennis-classes/">Group Tennis Classes</a></li><li><a href="/services/kids-junior-programs/">Kids & Junior Programs</a></li><li><a href="/services/adult-beginner-clinics/">Adult Beginner Clinics</a></li></ul></div>
+    <div class="footer-col"><h4>Enquiry</h4><ul><li><a href="/contact/">Request Quote</a></li><li><a href="/about/">About Us</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/faq/">FAQ</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy/">Privacy Policy</a></li><li><a href="/terms/">Terms of Service</a></li></ul></div>
+    <div class="footer-col"><h4>Serving the Lower Mainland</h4><ul><li><a href="/">Vancouver</a></li><li><a href="/areas/west-vancouver/">West Vancouver</a></li><li><a href="/areas/north-vancouver/">North Vancouver</a></li><li><a href="/areas/burnaby/">Burnaby</a></li><li><a href="/areas/richmond/">Richmond</a></li><li><a href="/areas/new-westminster/">New Westminster</a></li></ul></div>
+  </div></div></div>
+  <div class="container"><div class="footer-bottom"><span>© 2026 Your Tennis Lessons Vancouver. Licensed &amp; Insured.</span><span>Vancouver, Ontario, Canada</span></div></div>
+</footer>
+
+<a id="mobile-cta" href="tel:+1 (226) 212-0631" aria-label="Call us now"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call Now — +1 (226) 212-0631</a>
+
+<script>
+  function toggleMenu(btn){var m=document.getElementById('mobile-nav');m.classList.toggle('open');btn.setAttribute('aria-expanded',String(!m.classList.contains('open')));}
+  function closeMenu(){var m=document.getElementById('mobile-nav');m.classList.remove('open');var b=document.querySelector('.nav-hamburger');if(b)b.setAttribute('aria-expanded','false');}
+  function toggleServicesMenu(e){e.stopPropagation();var dd=document.querySelector('.nav-dropdown');if(!dd)return;var open=dd.hasAttribute('data-open');dd.toggleAttribute('data-open',!open);dd.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded',String(!open));}
+  document.addEventListener('click',function(e){var dd=document.querySelector('.nav-dropdown');if(dd&&!dd.contains(e.target))dd.removeAttribute('data-open');});
+</script>
+</body>
+</html>
