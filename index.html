@@ -40,7 +40,7 @@
     "description": "Tennis lessons in Vancouver with Tennis Canada TPA certified coaches. Adult beginners, kids, group classes, and private coaching. Get matched with a coach in 24 hours.",
     "url": "https://tennislessonsvancouver.ca",
     "logo": "https://tennislessonsvancouver.ca/favicon.svg",
-    "image": "https://tennislessonsvancouver.ca/images/hero_bg.webp",
+    "image": ["https://tennislessonsvancouver.ca/images/hero_bg.webp", "https://tennislessonsvancouver.ca/images/gallery_1.webp", "https://tennislessonsvancouver.ca/images/gallery_2.webp", "https://tennislessonsvancouver.ca/images/gallery_3.webp"],
     "telephone": "+1 (778) 200-1462",
     "email": "info@tennislessonsvancouver.ca",
     "address": {
@@ -56,20 +56,7 @@
       "latitude": "49.2827",
       "longitude": "-123.1207"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "09:00",
-        "closes": "21:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday"],
-        "opens": "07:00",
-        "closes": "18:00"
-      }
-    ],
+    "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "07:00", "closes": "18:00"}],
     "areaServed": [
       {"@type": "City", "name": "Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B", "addressCountry": "CA"}},
       {"@type": "City", "name": "West Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "West Vancouver", "addressRegion": "BC", "postalCode": "V7T", "addressCountry": "CA"}},
@@ -119,6 +106,32 @@
     "priceRange": "$$",
     "paymentAccepted": "Cash, Credit Card, E-Transfer",
     "currenciesAccepted": "CAD"
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite + WebPage entity graph (linked to LocalBusiness via @id) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://tennislessonsvancouver.ca#website",
+        "url": "https://tennislessonsvancouver.ca",
+        "name": "Your Tennis Lessons Vancouver",
+        "publisher": { "@id": "https://tennislessonsvancouver.ca#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://tennislessonsvancouver.ca#webpage",
+        "url": "https://tennislessonsvancouver.ca",
+        "name": "Your Tennis Lessons Vancouver | Tennis Canada Certified Coaches",
+        "description": "Tennis lessons in Vancouver with Tennis Canada TPA certified coaches. Adult beginners, kids, group classes, and private coaching. Get matched with a coach in 24 hours.",
+        "isPartOf": { "@id": "https://tennislessonsvancouver.ca#website" },
+        "about": { "@id": "https://tennislessonsvancouver.ca#organization" },
+        "primaryImageOfPage": "https://tennislessonsvancouver.ca/images/hero_bg.webp"
+      }
+    ]
   }
   </script>
 
