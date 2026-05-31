@@ -18,8 +18,14 @@
   <meta property="og:title" content="Your Tennis Lessons Vancouver | Tennis Canada Certified Coaches">
   <meta property="og:description" content="Tennis lessons across Vancouver and the Lower Mainland. Adult beginners, kids programs, private and group coaching. Coach match within 24 hours.">
   <meta property="og:url" content="https://tennislessonsvancouver.ca">
-  <meta property="og:image" content="/images/hero_bg.webp">
+  <meta property="og:image" content="https://tennislessonsvancouver.ca/images/hero_bg.webp">
   <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your Tennis Lessons Vancouver | Tennis Canada Certified Coaches">
+  <meta name="twitter:description" content="Tennis lessons across Vancouver and the Lower Mainland. Adult beginners, kids programs, private and group coaching. Coach match within 24 hours.">
+  <meta name="twitter:image" content="https://tennislessonsvancouver.ca/images/hero_bg.webp">
 
   <!-- JSON-LD: LocalBusiness
        Item 3: aggregateRating removed (no fake reviews).
@@ -41,7 +47,7 @@
       "@type": "PostalAddress",
       "streetAddress": "Vancouver, British Columbia",
       "addressLocality": "Vancouver",
-      "addressRegion": "ON",
+      "addressRegion": "BC",
       "postalCode": "V6B 1A1",
       "addressCountry": "CA"
     },
@@ -65,12 +71,12 @@
       }
     ],
     "areaServed": [
-      {"@type": "City", "name": "Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "ON", "postalCode": "V6B", "addressCountry": "CA"}},
-      {"@type": "City", "name": "West Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "West Vancouver", "addressRegion": "ON", "postalCode": "V7T", "addressCountry": "CA"}},
-      {"@type": "City", "name": "North Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "North Vancouver", "addressRegion": "ON", "postalCode": "V7M", "addressCountry": "CA"}},
-      {"@type": "City", "name": "Burnaby", "address": {"@type": "PostalAddress", "addressLocality": "Burnaby", "addressRegion": "ON", "postalCode": "V5A", "addressCountry": "CA"}},
-      {"@type": "City", "name": "Richmond", "address": {"@type": "PostalAddress", "addressLocality": "Richmond", "addressRegion": "ON", "postalCode": "V6X", "addressCountry": "CA"}},
-      {"@type": "City", "name": "New Westminster", "address": {"@type": "PostalAddress", "addressLocality": "New Westminster", "addressRegion": "ON", "postalCode": "V3L", "addressCountry": "CA"}}
+      {"@type": "City", "name": "Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V6B", "addressCountry": "CA"}},
+      {"@type": "City", "name": "West Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "West Vancouver", "addressRegion": "BC", "postalCode": "V7T", "addressCountry": "CA"}},
+      {"@type": "City", "name": "North Vancouver", "address": {"@type": "PostalAddress", "addressLocality": "North Vancouver", "addressRegion": "BC", "postalCode": "V7M", "addressCountry": "CA"}},
+      {"@type": "City", "name": "Burnaby", "address": {"@type": "PostalAddress", "addressLocality": "Burnaby", "addressRegion": "BC", "postalCode": "V5A", "addressCountry": "CA"}},
+      {"@type": "City", "name": "Richmond", "address": {"@type": "PostalAddress", "addressLocality": "Richmond", "addressRegion": "BC", "postalCode": "V6X", "addressCountry": "CA"}},
+      {"@type": "City", "name": "New Westminster", "address": {"@type": "PostalAddress", "addressLocality": "New Westminster", "addressRegion": "BC", "postalCode": "V3L", "addressCountry": "CA"}}
     ],
     "hasOfferCatalog": {
   "@type": "OfferCatalog",
@@ -81,7 +87,7 @@
       "itemOffered": {
         "@type": "Service",
         "name": "Private 1-on-1 Lessons",
-        "url": "https://tennislessonsvancouver.ca/services/private-1-on-1-lessons/"
+        "url": "https://tennislessonsvancouver.ca/#services"
       }
     },
     {
@@ -89,7 +95,7 @@
       "itemOffered": {
         "@type": "Service",
         "name": "Group Tennis Classes",
-        "url": "https://tennislessonsvancouver.ca/services/group-tennis-classes/"
+        "url": "https://tennislessonsvancouver.ca/#services"
       }
     },
     {
@@ -97,7 +103,7 @@
       "itemOffered": {
         "@type": "Service",
         "name": "Kids & Junior Programs",
-        "url": "https://tennislessonsvancouver.ca/services/kids-junior-programs/"
+        "url": "https://tennislessonsvancouver.ca/#services"
       }
     },
     {
@@ -105,7 +111,7 @@
       "itemOffered": {
         "@type": "Service",
         "name": "Adult Beginner Clinics",
-        "url": "https://tennislessonsvancouver.ca/services/adult-beginner-clinics/"
+        "url": "https://tennislessonsvancouver.ca/#services"
       }
     }
   ]
@@ -191,6 +197,463 @@
   --radius:          6px;
   --max-w:           1200px;
   --transition:      0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  /* Density scale — multiplies section padding + key gaps. Driven by
+     Stage 1 design_context.density_scale (compact|comfortable|spacious). */
+  --density-scale:   1;
+}
+
+/* ── DESIGN VARIETY: section pattern backgrounds ───────────────────────────────
+   One of these classes is applied to <body> via . Patterns
+   are subtle by design and applied to alternating sections to avoid visual
+   noise. Stage 1 design_context.pattern_style selects which one. */
+
+.pattern-dot-grid .section-pad-accent,
+.pattern-dot-grid .section-pad:nth-of-type(even) {
+  background-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.07) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.pattern-h-lines .section-pad-accent,
+.pattern-h-lines .section-pad:nth-of-type(even) {
+  background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.04), rgba(0,0,0,0.04) 1px, transparent 1px, transparent 18px);
+}
+.pattern-diagonal-hatch .section-pad-accent,
+.pattern-diagonal-hatch .section-pad:nth-of-type(even) {
+  background-image: repeating-linear-gradient(45deg,
+    color-mix(in srgb, var(--color-primary) 8%, transparent),
+    color-mix(in srgb, var(--color-primary) 8%, transparent) 1px,
+    transparent 1px, transparent 12px);
+}
+.pattern-rays .section-pad-accent {
+  background-image: conic-gradient(from 0deg at 50% 100%,
+    transparent 0deg,
+    color-mix(in srgb, var(--color-primary) 15%, transparent) 90deg,
+    transparent 180deg);
+}
+.pattern-mesh-gradient .section-pad-accent {
+  background-image:
+    radial-gradient(ellipse at top right, color-mix(in srgb, var(--color-accent) 22%, transparent), transparent 60%),
+    radial-gradient(ellipse at bottom left, color-mix(in srgb, var(--color-primary) 15%, transparent), transparent 60%);
+}
+.pattern-concentric .section-pad-accent {
+  background-image: repeating-radial-gradient(circle at 0 0,
+    transparent 0 24px,
+    color-mix(in srgb, var(--color-accent) 12%, transparent) 24px 25px);
+}
+.pattern-band-rule .section-pad + .section-pad,
+.pattern-band-rule .section-pad-accent {
+  border-top: 8px solid var(--color-accent);
+}
+.pattern-wave .section-pad-accent {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='40'><path d='M0 30 Q15 10 30 30 T60 30' stroke='rgba(0,0,0,0.10)' stroke-width='1' fill='none'/></svg>");
+}
+
+/* ── DESIGN VARIETY: hero variant overrides ────────────────────────────────────
+   Stage 1 design_context.hero_variant drives one of these classes on #hero.
+   The default (image_right) needs no override — base hero CSS in single.html's
+   <style> block handles it. Each variant overrides specific properties without
+   re-templating the underlying HTML structure. */
+
+/* split_color — solid primary block on left, photo-backed white on right.
+   The hero photo is constrained to the right half and rendered at low
+   opacity so the form card sits cleanly on top of a softened image rather
+   than a stark white field. The navy color block stays flat. */
+#hero.hero-variant-split-color .hero-bg {
+  left: 50%;
+  width: 50%;
+  opacity: 0.32;
+  filter: brightness(1.06) saturate(0.82);
+}
+#hero.hero-variant-split-color .hero-bg::after {
+  background: linear-gradient(to bottom,
+    rgba(255,255,255,0.55) 0%,
+    rgba(255,255,255,0.35) 50%,
+    rgba(255,255,255,0.55) 100%) !important;
+}
+#hero.hero-variant-split-color { background: linear-gradient(to right,
+  var(--color-primary) 0%, var(--color-primary) 50%, var(--white) 50%, var(--white) 100%); }
+#hero.hero-variant-split-color .hero-content { color: var(--white); }
+#hero.hero-variant-split-color .hero-headline,
+#hero.hero-variant-split-color .hero-content h1 { color: var(--white); }
+#hero.hero-variant-split-color .hero-tagline { color: color-mix(in srgb, var(--color-accent) 90%, white); }
+#hero.hero-variant-split-color .hero-sub { color: rgba(255,255,255,0.85); }
+#hero.hero-variant-split-color .hero-established { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.3); }
+#hero.hero-variant-split-color .hero-phone { color: var(--white); }
+
+/* full_bleed — same hero photo as default, but darker overlay + centered text + form below */
+#hero.hero-variant-full-bleed .hero-bg::after { background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.65)) !important; }
+#hero.hero-variant-full-bleed .hero-split { grid-template-columns: 1fr !important; max-width: 720px; margin: 0 auto; gap: 28px; }
+#hero.hero-variant-full-bleed .hero-content { text-align: center; }
+#hero.hero-variant-full-bleed .hero-headline { font-size: clamp(36px, 6vw, 64px); }
+#hero.hero-variant-full-bleed .hero-tagline,
+#hero.hero-variant-full-bleed .hero-sub { text-align: center; }
+#hero.hero-variant-full-bleed .hero-phone { justify-content: center; }
+
+/* centered_credentials — no photo, white bg, centered text + form stacked */
+#hero.hero-variant-centered-credentials .hero-bg { display: none; }
+#hero.hero-variant-centered-credentials { background: var(--white); border-bottom: 1px solid var(--border); }
+#hero.hero-variant-centered-credentials .hero-split { grid-template-columns: 1fr !important; max-width: 680px; margin: 0 auto; gap: 32px; }
+#hero.hero-variant-centered-credentials .hero-content { text-align: center; color: var(--color-text); }
+#hero.hero-variant-centered-credentials .hero-headline,
+#hero.hero-variant-centered-credentials .hero-content h1 { color: var(--color-text); }
+#hero.hero-variant-centered-credentials .hero-sub { color: var(--text-mid); text-align: center; }
+#hero.hero-variant-centered-credentials .hero-tagline { color: var(--color-primary); text-align: center; }
+#hero.hero-variant-centered-credentials .hero-phone { justify-content: center; color: var(--color-primary); }
+#hero.hero-variant-centered-credentials .hero-established { color: var(--color-accent); border-color: var(--color-accent); }
+#hero.hero-variant-centered-credentials .hero-form-card { max-width: 540px; margin: 0 auto; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+
+/* editorial — subtle warm bg, large serif headline, asymmetric grid */
+#hero.hero-variant-editorial .hero-bg { display: none; }
+#hero.hero-variant-editorial { background: color-mix(in srgb, var(--color-accent) 6%, var(--white)); }
+#hero.hero-variant-editorial .hero-split { grid-template-columns: 1.5fr 1fr !important; gap: 48px; align-items: center; }
+#hero.hero-variant-editorial .hero-content { color: var(--color-text); }
+#hero.hero-variant-editorial .hero-headline { font-size: clamp(40px, 6vw, 72px); line-height: 1.0; color: var(--color-text); }
+#hero.hero-variant-editorial .hero-tagline { color: var(--color-accent); border-top: 2px solid var(--color-accent); border-bottom: 2px solid var(--color-accent); padding: 6px 0; display: inline-block; width: max-content; font-size: 12px; letter-spacing: 0.16em; }
+#hero.hero-variant-editorial .hero-sub { color: var(--text-mid); font-size: 18px; max-width: 50ch; }
+#hero.hero-variant-editorial .hero-established { display: none; }
+#hero.hero-variant-editorial .hero-phone { color: var(--color-primary); }
+#hero.hero-variant-editorial .hero-form-card { border: 1px solid var(--border); }
+
+/* ── DESIGN VARIETY: testimonial variant overrides ─────────────────────────────
+   Stage 1 design_context.testimonial_variant selects one of:
+   - card_rail (default — current treatment, no override needed)
+   - pull_quote (large serif italic quotes, no card chrome)
+   - quote_wall (denser grid of shorter quotes) */
+
+/* pull_quote — strip card chrome, large serif italic, accent rule */
+#reviews.testimonial-variant-pull-quote .testimonials-track {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  overflow: visible;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0;
+}
+#reviews.testimonial-variant-pull-quote .testimonial-card {
+  background: transparent;
+  border: none;
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0;
+  padding: 8px 0 8px 28px;
+  box-shadow: none;
+  min-width: 0;
+  flex: none;
+  scroll-snap-align: none;
+}
+#reviews.testimonial-variant-pull-quote .testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin-bottom: 14px;
+}
+#reviews.testimonial-variant-pull-quote .testimonial-author { padding-top: 0; border: none; }
+#reviews.testimonial-variant-pull-quote .author-avatar {
+  width: 36px; height: 36px;
+  background: transparent;
+  border: 1.5px solid var(--color-accent);
+  color: var(--color-primary);
+}
+/* Pull-quote variant features select quotes — show only the first 3. The
+   remaining 5 testimonials stay in stage1 (8 required by validator) but
+   render hidden. Premium positioning benefits from quality > quantity. */
+#reviews.testimonial-variant-pull-quote .testimonial-card:nth-child(n+4) {
+  display: none;
+}
+/* Quote-wall variant shows a 3x2 grid — limit to first 6 for cleaner symmetry. */
+#reviews.testimonial-variant-quote-wall .testimonial-card:nth-child(n+7) {
+  display: none;
+}
+
+/* ── DESIGN VARIETY: services section variants ─────────────────────────────────
+   Stage 1 design_context.services_variant selects one of:
+   - card_grid (default — auto-fill grid of equal cards, no override)
+   - horizontal_strip (4 services in a single horizontal row, denser cards)
+   - editorial_list (numbered list with large numerals, services as rows) */
+
+/* horizontal_strip — denser strip across the full width */
+#services.services-variant-horizontal-strip .services-grid {
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 14px;
+}
+#services.services-variant-horizontal-strip .service-card-modal {
+  padding: 20px 16px;
+  text-align: center;
+}
+#services.services-variant-horizontal-strip .service-icon {
+  margin-left: auto; margin-right: auto;
+  width: 44px; height: 44px;
+}
+#services.services-variant-horizontal-strip .service-card-modal h3 { font-size: 15px; }
+#services.services-variant-horizontal-strip .service-card-modal p { font-size: 13px; }
+@media (max-width: 900px) {
+  #services.services-variant-horizontal-strip .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* editorial_list — large numerals + horizontal rows + thin rule between */
+#services.services-variant-editorial-list .services-grid {
+  display: block !important;
+  max-width: 880px;
+  margin: 0 auto;
+  counter-reset: editorial-service;
+}
+#services.services-variant-editorial-list .service-card-modal {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0 32px;
+  padding: 32px 0;
+  border: none;
+  border-top: 1px solid var(--border);
+  border-radius: 0;
+  align-items: start;
+  counter-increment: editorial-service;
+  position: relative;
+}
+#services.services-variant-editorial-list .service-card-modal:first-child { border-top: none; }
+#services.services-variant-editorial-list .service-card-modal:hover {
+  transform: none;
+  box-shadow: none;
+}
+/* Numeral takes col 1, spans all rows */
+#services.services-variant-editorial-list .service-card-modal::before {
+  content: '0' counter(editorial-service);
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  opacity: 0.7;
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+/* Service icon hidden — numeral replaces it */
+#services.services-variant-editorial-list .service-icon { display: none; }
+/* All content children explicitly placed in col 2 so they don't backfill col 1 */
+#services.services-variant-editorial-list .service-card-modal > h3,
+#services.services-variant-editorial-list .service-card-modal > p,
+#services.services-variant-editorial-list .service-card-modal > .service-toggle {
+  grid-column: 2;
+}
+#services.services-variant-editorial-list .service-card-modal h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+#services.services-variant-editorial-list .service-card-modal p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+@media (max-width: 720px) {
+  #services.services-variant-editorial-list .service-card-modal {
+    grid-template-columns: 64px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+  }
+  #services.services-variant-editorial-list .service-card-modal::before { font-size: 40px; }
+}
+
+/* ── DESIGN VARIETY: why-us section variants ───────────────────────────────────
+   Stage 1 design_context.why_us_variant selects one of:
+   - text_with_image (default — 1fr 1fr text-left image-right, no override)
+   - image_first (1.2fr 1fr image-left text-right — image visually leads)
+   - text_centered (no image, centered text + value-props, more whitespace) */
+
+/* image_first — flip the grid and give image more weight */
+#why-us.why-us-variant-image-first .why-us-grid {
+  grid-template-columns: 1.2fr 1fr !important;
+  direction: rtl;
+}
+#why-us.why-us-variant-image-first .why-us-grid > * { direction: ltr; }
+
+/* text_centered — hide the image and body text, lead with credentialed
+   3-col value-prop grid. Width matches the rest of the page.
+   Section gets a soft accent-derived tint to break up the white page. */
+#why-us.why-us-variant-text-centered {
+  background: color-mix(in srgb, var(--color-accent) 7%, var(--white)) !important;
+}
+
+/* Opt-in section tint via design_context.section_tint = "subtle".
+   When set, sections that would otherwise be flat white pick up a soft
+   accent-derived tint to break page rhythm. body class wins over
+   single.html's inline `#faq { background: var(--white); }`. */
+body.section-tint-subtle #faq {
+  background-color: color-mix(in srgb, var(--color-accent) 7%, var(--white)) !important;
+}
+#why-us.why-us-variant-text-centered .why-us-grid {
+  grid-template-columns: 1fr !important;
+  text-align: center;
+}
+#why-us.why-us-variant-text-centered .why-us-photo { display: none; }
+/* Suppress the long body paragraph — variant relies on headline + evidence */
+#why-us.why-us-variant-text-centered .why-us-left .section-subtitle { display: none; }
+#why-us.why-us-variant-text-centered .value-props {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+  text-align: left;
+}
+#why-us.why-us-variant-text-centered .value-prop {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+@media (max-width: 800px) {
+  #why-us.why-us-variant-text-centered .value-props { grid-template-columns: 1fr; }
+}
+
+/* ── DESIGN VARIETY: process section variants ──────────────────────────────────
+   Stage 1 design_context.process_variant selects one of:
+   - card_grid (default — current 4-column horizontal flow with dashed rail)
+   - timeline (vertical timeline with continuous left rail, larger step bodies)
+   - stepped (no card chrome, oversized numbers carry the rhythm) */
+
+/* timeline — single-column vertical timeline with continuous left rail.
+   Width matches the rest of the page; the timeline rail anchors flush left
+   to the 70px markers regardless of container width. */
+#process.process-variant-timeline .process-grid {
+  grid-template-columns: 1fr !important;
+  gap: 0 !important;
+  position: relative;
+}
+#process.process-variant-timeline .process-grid::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 35px;
+  right: auto;
+  width: 2px;
+  height: auto;
+  border: none;
+  background: var(--color-accent);
+  opacity: 0.4;
+}
+#process.process-variant-timeline .process-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  background: transparent;
+  border: none;
+  padding: 24px 0;
+  border-radius: 0;
+  position: relative;
+}
+#process.process-variant-timeline .process-step:hover { transform: none; box-shadow: none; }
+#process.process-variant-timeline .process-step-header {
+  background: var(--color-primary);
+  border-radius: 50%;
+  width: 70px; height: 70px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  min-height: 0;
+}
+#process.process-variant-timeline .process-step-header::before {
+  content: '0' counter(process-step);
+  font-size: 22px;
+  color: var(--color-accent);
+  position: static;
+  font-weight: 700;
+}
+#process.process-variant-timeline .process-step-icon { display: none; }
+#process.process-variant-timeline .process-step-body {
+  padding: 8px 0 8px 24px;
+}
+#process.process-variant-timeline .process-step h3 { font-size: 18px; margin-bottom: 6px; }
+#process.process-variant-timeline .process-step p { font-size: 15px; }
+
+/* stepped — minimal card chrome, oversized numbers as the visual rhythm */
+#process.process-variant-stepped .process-grid::before { display: none; }
+#process.process-variant-stepped .process-step {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+#process.process-variant-stepped .process-step:hover { transform: none; box-shadow: none; }
+#process.process-variant-stepped .process-step-header {
+  background: transparent;
+  padding: 0 0 12px;
+  min-height: 0;
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: 18px;
+}
+#process.process-variant-stepped .process-step-header::before {
+  font-size: 72px;
+  color: var(--color-primary);
+  opacity: 1;
+  position: static;
+  font-weight: 800;
+}
+#process.process-variant-stepped .process-step-icon { display: none; }
+#process.process-variant-stepped .process-step-body { padding: 0; }
+#process.process-variant-stepped .process-step h3 { font-size: 18px; }
+
+/* ── DESIGN VARIETY: gallery section variants ──────────────────────────────────
+   Stage 1 design_context.gallery_variant selects one of:
+   - grid (default — equal 3-column grid, no override)
+   - asymmetric_feature (1 large hero image left, 2 smaller stacked right) */
+
+#gallery.gallery-variant-asymmetric-feature .gallery-grid {
+  grid-template-columns: 2fr 1fr !important;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(1) {
+  grid-column: 1; grid-row: 1 / 3;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(2) {
+  grid-column: 2; grid-row: 1;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(3) {
+  grid-column: 2; grid-row: 2;
+}
+#gallery.gallery-variant-asymmetric-feature .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 720px) {
+  #gallery.gallery-variant-asymmetric-feature .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+  #gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(1),
+  #gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(2),
+  #gallery.gallery-variant-asymmetric-feature .gallery-item:nth-child(3) {
+    grid-column: 1; grid-row: auto;
+  }
+}
+
+/* quote_wall — denser 3-col grid of shorter quotes, no horizontal scroll */
+#reviews.testimonial-variant-quote-wall .testimonials-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  overflow: visible;
+  padding: 0;
+}
+#reviews.testimonial-variant-quote-wall .testimonial-card {
+  min-width: 0;
+  flex: none;
+  scroll-snap-align: none;
+  padding: 22px;
+}
+#reviews.testimonial-variant-quote-wall .testimonial-quote {
+  font-size: 15px;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+@media (max-width: 900px) {
+  #reviews.testimonial-variant-quote-wall .testimonials-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  #reviews.testimonial-variant-quote-wall .testimonials-track {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ── RESET & BASE ───────────────────────────────────────────────────────────── */
@@ -234,9 +697,11 @@ ul { list-style: none; }
   padding: 0 24px;
 }
 
-.section-pad        { padding: 72px 0; }
-.section-pad-sm     { padding: 48px 0; }
-.section-pad-accent { padding: 40px 0; } /* Compact accent bands: trust-band, stats-bar */
+/* Section padding scaled by Stage 1 design_context.density_scale.
+   compact (0.78) → ~56px, comfortable (1.0) → 72px, spacious (1.28) → ~92px */
+.section-pad        { padding: calc(72px * var(--density-scale)) 0; }
+.section-pad-sm     { padding: calc(48px * var(--density-scale)) 0; }
+.section-pad-accent { padding: calc(40px * var(--density-scale)) 0; } /* Compact accent bands: trust-band, stats-bar */
 
 /* ── TYPOGRAPHY HELPERS ─────────────────────────────────────────────────────── */
 .section-eyebrow {
@@ -1106,14 +1571,12 @@ ul { list-style: none; }
       border-bottom: 1px solid var(--border);
     }
 
+    /* auto-fit + minmax means the grid adapts to the actual visible item
+       count — works regardless of whether 2, 3, or 4 trust-items are
+       visible. Hidden items (display:none) take no grid track. */
     .trust-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    /* Auto-collapse the grid to 3 columns when one trust-item slot is empty.
-       Specificity overrides the base .trust-grid rule above. */
-    .trust-grid:has(.trust-item:has(strong:empty)) {
-      grid-template-columns: repeat(3, 1fr) !important;
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     }
 
     .trust-item {
@@ -1806,7 +2269,7 @@ ul { list-style: none; }
   </style>
   
 </head>
-<body>
+<body class=" ">
 <a href="#page-content" class="skip-link">Skip to main content</a>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -1826,7 +2289,7 @@ ul { list-style: none; }
       </ul>
 
       <div class="nav-actions">
-        <a href="tel:+1 (226) 212-0631" class="nav-phone" aria-label="Call us">
+        <a href="tel:+12262120631" class="nav-phone" aria-label="Call us">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           +1 (226) 212-0631
         </a>
@@ -1845,7 +2308,7 @@ ul { list-style: none; }
     <a href="#reviews" onclick="closeMenu()">Reviews</a>
     <a href="#faq" onclick="closeMenu()">FAQ</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
-    <a href="tel:+1 (226) 212-0631" onclick="closeMenu()" style="display:flex;align-items:center;gap:8px;">
+    <a href="tel:+12262120631" onclick="closeMenu()" style="display:flex;align-items:center;gap:8px;">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       +1 (226) 212-0631
     </a>
@@ -1858,7 +2321,7 @@ ul { list-style: none; }
 <!-- ═══════════════════════════════════════════════════════════
      HERO — Split layout: text left, form right
 ═══════════════════════════════════════════════════════════ -->
-<section id="hero" aria-label="Hero">
+<section id="hero" class="hero-variant-image-right" aria-label="Hero">
   <div class="hero-bg" style="background-image: url('/images/hero_bg.webp');" role="img" aria-label="Outdoor public tennis court in Vancouver where Your Tennis Lessons Vancouver runs lessons"></div>
 
   <div class="container">
@@ -1870,7 +2333,7 @@ ul { list-style: none; }
         <h1 class="hero-headline">Tennis Lessons in Vancouver, For Every Age and Level</h1>
         <p class="hero-sub">Tennis Canada TPA certified coaches at familiar Park Board courts, plus indoor options for the rainy months. Talk to a coach before you book — we match you in 24 hours.</p>
 
-        <a href="tel:+1 (226) 212-0631" class="hero-phone">
+        <a href="tel:+12262120631" class="hero-phone">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           +1 (226) 212-0631
         </a>
@@ -2002,7 +2465,7 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Faster Progress</strong> — All attention is on you. That means fewer corrections waiting their turn, and more reps landing per hour on the court.</li><li><strong>Schedule Around You</strong> — Coaches teach mornings, evenings, and weekends. Indoor options available through Vancouver's rainy stretches.</li><li><strong>Built-In Goal Setting</strong> — Your first lesson is a skill assessment so the coach can map out where you want your game to go.</li><li><strong>$65–$95 Per Hour</strong> — Pricing varies by coach experience and venue. We confirm the rate before you book. Never a surprise.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog>
       <article class="service-card-modal">
@@ -2027,7 +2490,7 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Cost-Effective</strong> — Court time splits across the group. Most adult classes work out to $40–$55 per person per hour.</li><li><strong>Built-In Community</strong> — Players in a class often become friends, league partners, and weekend rally regulars.</li><li><strong>Level-Matched Groups</strong> — We sort classes by ability (beginner, intermediate, advanced) so the pace fits the room.</li><li><strong>Six-Week Sessions</strong> — Adult classes typically run as six-week blocks so progression builds instead of restarting weekly.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog>
       <article class="service-card-modal">
@@ -2052,7 +2515,7 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Ages 5 Through 17</strong> — Programs scale from first-racket basics (Quickstart) through tournament-track junior training.</li><li><strong>Skill Over Hype</strong> — We focus on real technique (grip, footwork, balance), not just keeping kids busy on a court.</li><li><strong>Holiday & Summer Camps</strong> — School-break camps available throughout the year so kids stay sharp between regular sessions.</li><li><strong>Safe Sport Certified</strong> — Coaches working with juniors hold a current Safe Sport Tennis Certificate.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog>
       <article class="service-card-modal">
@@ -2077,11 +2540,11 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Built for First-Timers</strong> — Everything starts at the beginning: grip, posture, racket control, gentle rallying. No assumed knowledge.</li><li><strong>Patient Pacing</strong> — The clinic adjusts to the group. We don't rush through fundamentals because someone wants to play matches sooner.</li><li><strong>Every Age Welcome</strong> — Our regulars range from late twenties to mid-sixties. You won't be the oldest person on the court.</li><li><strong>Skill Assessment First</strong> — Your first lesson is a structured skill assessment so you and the coach can map out a realistic plan.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog> placeholder
 ═══════════════════════════════════════════════════════════ -->
-<section id="services" class="section-pad" aria-labelledby="services-heading">
+<section id="services" class="section-pad services-variant-card-grid" aria-labelledby="services-heading">
   <div class="container">
     <div class="services-header reveal">
       <span class="section-eyebrow">What We Teach</span>
@@ -2111,7 +2574,7 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Faster Progress</strong> — All attention is on you. That means fewer corrections waiting their turn, and more reps landing per hour on the court.</li><li><strong>Schedule Around You</strong> — Coaches teach mornings, evenings, and weekends. Indoor options available through Vancouver's rainy stretches.</li><li><strong>Built-In Goal Setting</strong> — Your first lesson is a skill assessment so the coach can map out where you want your game to go.</li><li><strong>$65–$95 Per Hour</strong> — Pricing varies by coach experience and venue. We confirm the rate before you book. Never a surprise.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog>
       <article class="service-card-modal">
@@ -2136,7 +2599,7 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Cost-Effective</strong> — Court time splits across the group. Most adult classes work out to $40–$55 per person per hour.</li><li><strong>Built-In Community</strong> — Players in a class often become friends, league partners, and weekend rally regulars.</li><li><strong>Level-Matched Groups</strong> — We sort classes by ability (beginner, intermediate, advanced) so the pace fits the room.</li><li><strong>Six-Week Sessions</strong> — Adult classes typically run as six-week blocks so progression builds instead of restarting weekly.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog>
       <article class="service-card-modal">
@@ -2161,7 +2624,7 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Ages 5 Through 17</strong> — Programs scale from first-racket basics (Quickstart) through tournament-track junior training.</li><li><strong>Skill Over Hype</strong> — We focus on real technique (grip, footwork, balance), not just keeping kids busy on a court.</li><li><strong>Holiday & Summer Camps</strong> — School-break camps available throughout the year so kids stay sharp between regular sessions.</li><li><strong>Safe Sport Certified</strong> — Coaches working with juniors hold a current Safe Sport Tennis Certificate.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog>
       <article class="service-card-modal">
@@ -2186,7 +2649,7 @@ ul { list-style: none; }
       <ul class="service-benefits">
         <li><strong>Built for First-Timers</strong> — Everything starts at the beginning: grip, posture, racket control, gentle rallying. No assumed knowledge.</li><li><strong>Patient Pacing</strong> — The clinic adjusts to the group. We don't rush through fundamentals because someone wants to play matches sooner.</li><li><strong>Every Age Welcome</strong> — Our regulars range from late twenties to mid-sixties. You won't be the oldest person on the court.</li><li><strong>Skill Assessment First</strong> — Your first lesson is a structured skill assessment so you and the coach can map out a realistic plan.</li>
       </ul>
-      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Get a Free Estimate</a>
+      <a href="#hero" class="btn btn-primary service-modal-cta" onclick="this.closest('dialog').close()">Book My First Lesson</a>
     </div>
   </dialog>
     </div>
@@ -2197,7 +2660,7 @@ ul { list-style: none; }
 <!-- ═══════════════════════════════════════════════════════════
      WHY CHOOSE US
 ═══════════════════════════════════════════════════════════ -->
-<section id="why-us" class="section-pad" aria-labelledby="why-us-heading">
+<section id="why-us" class="section-pad why-us-variant-text-with-image" aria-labelledby="why-us-heading">
   <div class="container">
     <div class="why-us-grid">
       <div class="why-us-left reveal">
@@ -2245,7 +2708,7 @@ ul { list-style: none; }
 <!-- ═══════════════════════════════════════════════════════════
      PROCESS — 4 Steps
 ═══════════════════════════════════════════════════════════ -->
-<section id="process" class="section-pad" aria-labelledby="process-heading">
+<section id="process" class="section-pad process-variant-card-grid" aria-labelledby="process-heading">
   <div class="container">
     <div class="process-header reveal">
       <span class="section-eyebrow">How It Works</span>
@@ -2297,7 +2760,7 @@ ul { list-style: none; }
 <!-- ═══════════════════════════════════════════════════════════
      GALLERY — 3 images
 ═══════════════════════════════════════════════════════════ -->
-<section id="gallery" class="section-pad" aria-labelledby="gallery-heading">
+<section id="gallery" class="section-pad gallery-variant-grid" aria-labelledby="gallery-heading">
   <div class="container">
     <div class="gallery-header reveal">
       <div>
@@ -2339,7 +2802,7 @@ ul { list-style: none; }
 <!-- ═══════════════════════════════════════════════════════════
      TESTIMONIALS — Horizontal scrolling carousel (8 cards)
 ═══════════════════════════════════════════════════════════ -->
-<section id="reviews" class="section-pad" aria-labelledby="reviews-heading">
+<section id="reviews" class="section-pad testimonial-variant-card-rail" aria-labelledby="reviews-heading">
   <div class="container">
     <div class="testimonials-header reveal">
       <span class="section-eyebrow">What Vancouver Players Say</span>
@@ -2546,7 +3009,7 @@ ul { list-style: none; }
       <div class="cta-band-text">
         <h2 class="cta-band-headline">Ready to pick up a racket?</h2>
         <p class="cta-band-sub">Tell us your level, your neighbourhood, and what you want from tennis. We'll match you with the right coach within 24 hours on weekdays. No card on file.</p>
-        <a href="tel:+1 (226) 212-0631" class="cta-band-phone">
+        <a href="tel:+12262120631" class="cta-band-phone">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           Or call: +1 (226) 212-0631
         </a>
@@ -2586,7 +3049,7 @@ ul { list-style: none; }
           <p>Tennis lessons in Vancouver with Tennis Canada TPA certified coaches. Serving Vancouver, North Vancouver, West Vancouver, Burnaby, Richmond, and New Westminster.</p>
           <address class="footer-nap" style="font-style:normal;">
             <span>Vancouver, British Columbia</span><br>
-            <a href="tel:+1 (226) 212-0631" style="color:rgba(255,255,255,0.65);">+1 (226) 212-0631</a>
+            <a href="tel:+12262120631" style="color:rgba(255,255,255,0.65);">+1 (226) 212-0631</a>
           </address>
         </div>
 
@@ -2620,7 +3083,7 @@ ul { list-style: none; }
     <div class="footer-bottom">
       <!-- Item 4: Privacy + Terms inline (single.html has no dedicated footer-col for them) -->
       <span>&copy; 2026 Your Tennis Lessons Vancouver. Licensed &amp; Insured. · <a href="/privacy/" style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="/terms/" style="color:inherit;text-decoration:underline;">Terms</a></span>
-      <span>Vancouver, Ontario, Canada</span>
+      <span>Vancouver, British Columbia, Canada</span>
     </div>
   </div>
 </footer>
@@ -2629,7 +3092,7 @@ ul { list-style: none; }
 <!-- ═══════════════════════════════════════════════════════════
      MOBILE FLOATING CTA
 ═══════════════════════════════════════════════════════════ -->
-<a id="mobile-cta" href="tel:+1 (226) 212-0631" aria-label="Call us now">
+<a id="mobile-cta" href="tel:+12262120631" aria-label="Call us now">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.15 12 19.79 19.79 0 011.1 3.18 2 2 0 013.1 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
   Call Now &mdash; +1 (226) 212-0631
 </a>
