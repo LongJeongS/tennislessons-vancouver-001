@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | Your Tennis Lessons Vancouver</title>
@@ -506,8 +506,8 @@ html {
 body {
   overflow-x: hidden;
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.72;
   color: var(--color-text);
   background: var(--white);
 }
@@ -1206,6 +1206,342 @@ ul { list-style: none; }
 .form-thank-you p  { color:var(--text-mid); font-size:15px; max-width:360px; margin:0; }
 .form-thank-you a  { color:var(--color-primary); font-weight:600; }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   EDITORIAL-INDUSTRIAL THEME LAYER  (opt-in; scoped to body.feel-editorial-industrial)
+   Emitted only when design_context.visual_feel == "editorial_industrial".
+   Every selector is body-scoped, so it is inert for all other sites and wins
+   over templates' inline <style> by specificity (two classes > one).
+   Mirrors the Stitch "Industrial Editorial" system: bone page, graphite
+   statement bands, copper accents, condensed uppercase headlines, hairline
+   rules instead of card shadows.
+   ═══════════════════════════════════════════════════════════════════════════ */
+body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7be; }
+
+/* ── Type scale ported verbatim from the Stitch design system ──
+   metadata 11px/0.15em/600 · headline-md 24/600 · headline-lg 48/700 ·
+   display-lg 72/-0.02em/700 · body 16-18/1.6. Same families (Barlow Condensed +
+   Fira Sans), matched weight/size/tracking. */
+.feel-editorial-industrial .section-eyebrow,
+.feel-editorial-industrial .hero-tagline {
+  font-family: var(--font-body);
+  text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; font-size: 11px;
+  color: var(--color-accent);
+}
+.feel-editorial-industrial .section-eyebrow {
+  padding-top: 14px; border-top: 1px solid var(--hairline); display: inline-block; margin-bottom: 18px;
+}
+
+/* Condensed uppercase headlines (display + headline scale) */
+.feel-editorial-industrial .section-title,
+.feel-editorial-industrial .hero-headline,
+.feel-editorial-industrial h1,
+.feel-editorial-industrial h2 { text-transform: uppercase; font-weight: 700; }
+.feel-editorial-industrial .section-title {
+  font-size: clamp(30px, 3.8vw, 46px); line-height: 1.08; letter-spacing: -0.01em;
+}
+.feel-editorial-industrial .hero-headline {
+  font-size: clamp(40px, 6vw, 72px); line-height: 1.0; letter-spacing: -0.02em;
+}
+
+/* Hairline rules instead of card shadows */
+.feel-editorial-industrial .spec-item,
+.feel-editorial-industrial .gallery-item,
+.feel-editorial-industrial .area-card,
+.feel-editorial-industrial .review-card,
+.feel-editorial-industrial .testimonial-card { box-shadow: none !important; }
+
+/* Copper CTAs (square-ish, no glow) */
+.feel-editorial-industrial .btn-primary { background: var(--color-accent); color: var(--white); box-shadow: none; }
+.feel-editorial-industrial .btn-primary:hover { background: var(--color-primary); }
+
+/* Boxed cards lift off the bone page with a WHITE surface (Stitch lifts via
+   surface color, not shadow). .benefit-card is already white; bring .related-card
+   ("Explore Our Other Services") in line so it stands out instead of blending. */
+.feel-editorial-industrial .related-card { background: var(--white); border-color: var(--hairline); }
+.feel-editorial-industrial .related-card:hover { border-color: var(--color-accent); box-shadow: none; }
+.feel-editorial-industrial .benefit-card { border-color: var(--hairline); }
+
+/* Local intro spans the page like every other section (its base style centers a
+   narrow 720px column, which reads as indented/misaligned against the full-width
+   editorial sections). Center the heading block, and let the body paragraphs run
+   the full container width instead of a narrow capped column. */
+.feel-editorial-industrial .svc-local-intro .container { max-width: var(--max-w); text-align: left; }
+.feel-editorial-industrial .svc-local-intro .section-eyebrow { display: inline-block; }
+.feel-editorial-industrial .svc-local-intro h2 { max-width: none; }
+.feel-editorial-industrial .svc-local-intro-body { max-width: none; }
+
+/* ── Services → NUMBERED EDITORIAL ROW INDEX (Stitch "Core Capabilities") ──
+   Convert the card grid into full-width rows: big copper numeral, uppercase
+   title + blurb, copper "View →" pushed right, hairline dividers. Pure CSS via
+   counters — no markup change. Applies to home (.service-card) and area
+   (.area-service-card) lists. */
+.feel-editorial-industrial .services-header {
+  padding-bottom: 18px; border-bottom: 1px solid var(--color-primary); margin-bottom: 4px;
+}
+.feel-editorial-industrial .services-grid,
+.feel-editorial-industrial .area-services-grid {
+  display: block !important; grid-template-columns: none !important;
+  counter-reset: svc; border-top: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .service-card,
+.feel-editorial-industrial .area-service-card {
+  counter-increment: svc;
+  display: grid !important; grid-template-columns: auto 1fr auto; grid-template-rows: auto auto;
+  column-gap: 32px; align-items: center;
+  background: transparent !important; border: 0 !important; border-bottom: 1px solid var(--hairline) !important;
+  border-radius: 0 !important; box-shadow: none !important; padding: 30px 6px; margin: 0;
+}
+.feel-editorial-industrial .service-card::before,
+.feel-editorial-industrial .area-service-card::before {
+  content: counter(svc, decimal-leading-zero);
+  grid-column: 1; grid-row: 1 / span 2; align-self: center;
+  font-family: var(--font-heading); font-weight: 700; font-size: clamp(40px, 5vw, 64px);
+  line-height: 1; color: var(--color-accent); opacity: 0.9;
+}
+.feel-editorial-industrial .service-card .service-icon { display: none; }
+.feel-editorial-industrial .service-card h3,
+.feel-editorial-industrial .area-service-card h3 {
+  grid-column: 2; grid-row: 1; margin: 0 0 4px;
+  text-transform: uppercase; font-weight: 600; line-height: 1.12;
+  font-size: clamp(19px, 2.2vw, 24px); letter-spacing: -0.005em;
+}
+.feel-editorial-industrial .service-card p,
+.feel-editorial-industrial .area-service-card p {
+  grid-column: 2; grid-row: 2; margin: 0; color: var(--text-mid); font-size: 15px; line-height: 1.5;
+}
+.feel-editorial-industrial .service-card .service-learn-more,
+.feel-editorial-industrial .area-service-card a {
+  grid-column: 3; grid-row: 1 / span 2; align-self: center; justify-self: end; white-space: nowrap;
+  font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.15em;
+  font-size: 11px; font-weight: 600; color: var(--color-accent);
+}
+.feel-editorial-industrial .service-card:hover,
+.feel-editorial-industrial .area-service-card:hover {
+  transform: none; background: rgba(29,27,25,0.025) !important;
+}
+@media (max-width: 640px) {
+  .feel-editorial-industrial .service-card,
+  .feel-editorial-industrial .area-service-card { column-gap: 18px; grid-template-columns: auto 1fr; }
+  .feel-editorial-industrial .service-card .service-learn-more,
+  .feel-editorial-industrial .area-service-card a { grid-column: 2; grid-row: 3; justify-self: start; margin-top: 8px; }
+}
+
+/* ── Why-Us → dark graphite STATEMENT BAND (feel-scoped, no variant needed) ──
+   Full-bleed graphite band, oversized copper-eyebrowed pull-headline, photo
+   dropped, value-props stacked as a light evidence column. */
+.feel-editorial-industrial #why-us { background: var(--color-primary) !important; color: var(--white); }
+/* Full-width 2-col band: headline block LEFT, value-props column RIGHT (the photo
+   column is hidden, so dissolve .why-us-left with display:contents and place its
+   children across both columns instead of cramming them into the left half). */
+.feel-editorial-industrial #why-us .why-us-grid { grid-template-columns: 1.1fr 0.9fr !important; gap: 72px; align-items: start; direction: ltr; }
+.feel-editorial-industrial #why-us .why-us-photo { display: none; }
+.feel-editorial-industrial #why-us .why-us-left { display: contents; }
+.feel-editorial-industrial #why-us .section-eyebrow { grid-column: 1; color: #e0915c; border-top-color: rgba(255,255,255,0.25); }
+.feel-editorial-industrial #why-us .section-title { grid-column: 1; color: var(--white); font-size: clamp(38px, 5vw, 64px); line-height: 1.0; letter-spacing: -0.02em; }
+.feel-editorial-industrial #why-us .section-subtitle { grid-column: 1; color: rgba(255,255,255,0.78); max-width: 52ch; }
+.feel-editorial-industrial #why-us .value-props {
+  grid-column: 2; grid-row: 1 / span 4; align-self: start; margin: 0;
+  display: grid !important; grid-template-columns: 1fr; gap: 30px;
+  border-left: 1px solid rgba(255,255,255,0.18); padding-left: 40px;
+}
+.feel-editorial-industrial #why-us .value-prop h4 { color: var(--white); }
+.feel-editorial-industrial #why-us .value-prop p { color: rgba(255,255,255,0.72); }
+/* Icons read on the dark band: drop the dark chip, use a light copper. */
+.feel-editorial-industrial #why-us .vp-icon {
+  background: none !important; border-radius: 0 !important; width: auto !important; height: auto !important;
+  color: #e0915c;
+}
+@media (max-width: 900px) {
+  .feel-editorial-industrial #why-us .why-us-grid { grid-template-columns: 1fr !important; gap: 36px; }
+  .feel-editorial-industrial #why-us .section-eyebrow,
+  .feel-editorial-industrial #why-us .section-title,
+  .feel-editorial-industrial #why-us .section-subtitle { grid-column: 1; }
+  .feel-editorial-industrial #why-us .value-props { grid-column: 1; grid-row: auto; border-left: 0; padding-left: 0; }
+}
+
+/* ── Service page Materials & Specs → hairline ROWS, label-left / value-right ── */
+.feel-editorial-industrial .specs-grid { display: block !important; grid-template-columns: none !important; gap: 0; border-top: 1px solid var(--hairline); }
+.feel-editorial-industrial .spec-item { display: flex; justify-content: space-between; align-items: baseline; background: transparent; border: 0; border-bottom: 1px solid var(--hairline); border-radius: 0; padding: 18px 0; gap: 28px; }
+.feel-editorial-industrial .spec-item:hover { transform: none; }
+.feel-editorial-industrial .spec-icon { display: none; }
+.feel-editorial-industrial .spec-text { display: contents; }
+.feel-editorial-industrial .spec-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; color: var(--text-mid); }
+.feel-editorial-industrial .spec-value { text-align: right; font-size: 16px; font-weight: 600; color: var(--color-text); }
+
+/* ── FAQ → hairline dividers, no card chrome ── */
+.feel-editorial-industrial .faq-item { background: transparent; border: 0; border-bottom: 1px solid var(--hairline); border-radius: 0; box-shadow: none; }
+
+/* ── Area-page coordinate flourish (editorial only; hidden everywhere else) ── */
+.area-coords { display: none; }
+.feel-editorial-industrial .area-coords {
+  display: block; margin: 0 auto 8px; font-size: 12px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--color-accent); font-family: var(--font-body); font-weight: 600;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SERVICE-PAGE SECTION REDESIGN (Stitch screen D) — Why Choose Us / How It Works /
+   Where It Works brought into the editorial spec-sheet language: hairline ledgers,
+   big copper numerals, copper Material Symbols icons (no dark circles, no boxes).
+   Icons render only when the Material Symbols webfont loads (theme feels only).
+   ═══════════════════════════════════════════════════════════════════════════ */
+.feel-editorial-industrial .benefit-icon::before,
+.feel-editorial-industrial .application-item::before {
+  font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal;
+  line-height: 1; letter-spacing: normal; text-transform: none; white-space: nowrap;
+  font-feature-settings: 'liga'; -webkit-font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  color: var(--color-accent);
+}
+
+/* 1) WHY CHOOSE US → hairline ledger grid + copper Material Symbol icons */
+.feel-editorial-industrial .benefits-grid {
+  gap: 0; margin-top: 28px;
+  border-top: 1px solid var(--hairline); border-left: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .benefit-card {
+  background: transparent !important; border: 0 !important;
+  border-right: 1px solid var(--hairline) !important; border-bottom: 1px solid var(--hairline) !important;
+  border-radius: 0 !important; box-shadow: none !important; padding: 28px 24px;
+}
+.feel-editorial-industrial .benefit-card:hover { transform: none; box-shadow: none; }
+.feel-editorial-industrial .benefit-icon {
+  width: auto; height: auto; background: transparent !important;
+  border-radius: 0; margin-bottom: 14px; color: var(--color-accent);
+}
+.feel-editorial-industrial .benefit-icon svg { display: none; }
+.feel-editorial-industrial .benefit-icon::before { content: attr(data-ms); font-size: 32px; }
+.feel-editorial-industrial .benefit-title { text-transform: uppercase; letter-spacing: 0.02em; font-size: 15px; }
+
+/* 2) SERVICE-PAGE process (.svc-process .process-steps) → big copper numerals on
+   hairline rows. Scoped to .process-steps so it never touches the homepage process
+   (which uses .process-grid + its own `process-step` counter). */
+.feel-editorial-industrial .process-steps {
+  display: block !important; grid-template-columns: none !important; margin-top: 8px;
+  border-top: 1px solid var(--hairline); counter-reset: pstep;
+}
+.feel-editorial-industrial .process-steps::before { display: none !important; }
+.feel-editorial-industrial .process-steps .process-step {
+  counter-increment: pstep; display: grid; grid-template-columns: auto 1fr;
+  column-gap: 32px; align-items: start; text-align: left;
+  padding: 26px 4px; border-bottom: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .process-step-num {
+  width: auto; height: auto; background: transparent !important; border-radius: 0;
+  box-shadow: none !important; margin: 0; font-size: 0; grid-row: 1 / span 2; align-self: start;
+}
+.feel-editorial-industrial .process-step-num::before {
+  content: counter(pstep, decimal-leading-zero);
+  font-family: var(--font-heading); font-weight: 700; color: var(--color-accent);
+  font-size: clamp(40px, 5vw, 60px); line-height: 0.9;
+}
+.feel-editorial-industrial .process-steps .process-step h3 {
+  grid-column: 2; grid-row: 1; text-align: left; text-transform: uppercase;
+  font-size: clamp(18px, 2vw, 22px); margin: 0 0 6px;
+}
+.feel-editorial-industrial .process-steps .process-step p { grid-column: 2; grid-row: 2; text-align: left; margin: 0; max-width: 72ch; }
+.feel-editorial-industrial .process-result-img { box-shadow: none !important; border: 1px solid var(--hairline); margin-top: 48px; }
+
+/* HOMEPAGE 'How It Works' (#process .process-grid) → horizontal copper-numeral
+   timeline (Stitch screen E): centered header, 4 columns bracketed by top/bottom
+   hairlines, big copper numerals, no cards/shadows/icon-tiles/connector. */
+.feel-editorial-industrial #process .process-header { text-align: center; }
+.feel-editorial-industrial #process .process-grid {
+  gap: 48px; margin-top: 44px; padding: 44px 0;
+  border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+}
+.feel-editorial-industrial #process .process-grid::before { display: none !important; }
+.feel-editorial-industrial #process .process-grid .process-step {
+  background: transparent !important; border: 0 !important; border-radius: 0 !important;
+  box-shadow: none !important; padding: 0 !important; display: block;
+}
+.feel-editorial-industrial #process .process-grid .process-step:hover { transform: none; box-shadow: none; }
+.feel-editorial-industrial #process .process-step-header {
+  background: transparent !important; padding: 0 !important; min-height: 0 !important;
+  display: block; position: static; margin-bottom: 14px;
+}
+.feel-editorial-industrial #process .process-step-header::before {
+  position: static; left: auto; bottom: auto; display: block;
+  color: var(--color-accent); font-size: clamp(46px, 4.4vw, 60px); line-height: 0.9;
+}
+.feel-editorial-industrial #process .process-step-icon { display: none; }
+.feel-editorial-industrial #process .process-step-body { padding: 0 !important; }
+.feel-editorial-industrial #process .process-step-body h3 { text-transform: uppercase; font-size: clamp(18px, 1.6vw, 21px); margin: 0 0 8px; }
+@media (max-width: 760px) {
+  .feel-editorial-industrial #process .process-grid { grid-template-columns: repeat(2, 1fr) !important; row-gap: 40px; }
+}
+
+/* 3) WHERE IT WORKS → hairline index list + small copper Material Symbol icons */
+.feel-editorial-industrial .svc-applications { background: transparent !important; }
+.feel-editorial-industrial .applications-grid {
+  grid-template-columns: repeat(2, 1fr); gap: 0 48px; margin-top: 24px;
+  border-top: 1px solid var(--hairline);
+}
+.feel-editorial-industrial .application-item {
+  background: transparent !important; border: 0 !important;
+  border-bottom: 1px solid var(--hairline) !important; border-radius: 0 !important; box-shadow: none !important;
+  padding: 18px 4px; display: grid; grid-template-columns: auto 1fr; column-gap: 16px; align-items: baseline;
+}
+.feel-editorial-industrial .application-item:hover { transform: none; box-shadow: none; }
+.feel-editorial-industrial .application-item::before { content: attr(data-ms); font-size: 22px; grid-row: 1 / span 2; align-self: center; }
+.feel-editorial-industrial .application-item h3 { grid-column: 2; text-transform: uppercase; font-size: 15px; margin: 0 0 2px; }
+.feel-editorial-industrial .application-item p { grid-column: 2; margin: 0; font-size: 13px; line-height: 1.5; }
+@media (max-width: 760px) {
+  .feel-editorial-industrial .applications-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Lead form spam protection ─────────────────────────────────────────── */
+/* Honeypot: visually removed but present in the DOM for bots to fill. */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px; height: 1px;
+  overflow: hidden;
+}
+
+/* Inline lead-form submission error (shown only when capture fails). */
+.form-error {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-left: 3px solid #b3261e;
+  background: rgba(179, 38, 30, 0.08);
+  color: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.form-error a { font-weight: 600; text-decoration: underline; color: inherit; }
+
+/* ── Inline quote form (service / area / cost-guide money pages) ────────── */
+.quote-form-section { padding: 64px 0; background: var(--bg-alt, #f7f7f5); }
+.quote-form-card {
+  max-width: 640px; margin: 0 auto; padding: 36px 32px;
+  background: var(--white, #fff); border-radius: var(--radius, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.08));
+}
+.quote-form-card h2 { font-family: var(--font-heading); font-size: clamp(22px, 3.5vw, 30px); margin: 0 0 8px; }
+.quote-form-sub { color: var(--text-mid, #555); font-size: 15px; margin: 0 0 24px; }
+.quote-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.quote-form input[type="text"],
+.quote-form input[type="tel"],
+.quote-form input[type="email"] {
+  width: 100%; padding: 12px 14px; font-size: 15px; font-family: inherit;
+  border: 1px solid var(--border, #ddd); border-radius: var(--radius, 6px);
+  background: var(--white, #fff); box-sizing: border-box;
+}
+.quote-form input:focus { outline: 2px solid var(--color-accent); outline-offset: 1px; }
+.quote-form-submit {
+  width: 100%; padding: 14px 20px; margin-top: 4px; font-size: 16px; font-weight: 700;
+  font-family: inherit; color: var(--white, #fff); background: var(--color-accent);
+  border: none; border-radius: var(--radius, 6px); cursor: pointer;
+  transition: var(--transition, all 0.2s ease);
+}
+.quote-form-submit:hover { filter: brightness(0.92); }
+.quote-form-submit:disabled { opacity: 0.7; cursor: wait; }
+@media (max-width: 560px) {
+  .quote-form-row { grid-template-columns: 1fr; }
+  .quote-form-card { padding: 28px 20px; }
+}
+
     /* ── LEGAL DOC TEMPLATE (terms.html / privacy.html) ──────────────────── */
     .legal-hero { background: var(--color-primary); color: var(--white); padding: 80px 0 48px; }
     .legal-hero .container { max-width: 800px; }
@@ -1288,7 +1624,7 @@ ul { list-style: none; }
   <section class="legal-hero">
     <div class="container">
       <h1>Terms of Service</h1>
-      <p class="legal-meta">Site: <strong>https://tennislessonsvancouver.ca</strong> · Operator: <strong>InView Marketing</strong> · Last Updated: <strong>June 08, 2026</strong></p>
+      <p class="legal-meta">Site: <strong>https://tennislessonsvancouver.ca</strong> · Operator: <strong>InView Marketing</strong> · Last Updated: <strong>July 03, 2026</strong></p>
     </div>
   </section>
 
