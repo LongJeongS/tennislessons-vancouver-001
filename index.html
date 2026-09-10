@@ -153,7 +153,7 @@
       {
         "@type": "Question",
         "name": "Should I start with private or group tennis lessons?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Both work, and the right choice depends on what you want from tennis. Private lessons get you to specific technique goals faster because every minute on the court is on you. Group classes are more affordable and build a community of players at your level. Many students do both: group classes for regular play, plus occasional private lessons when a specific stroke needs work." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Both work, and the right choice depends on what you want from tennis. Private lessons get you to specific technique goals faster because every minute on the court is on you. Group classes trade some one-on-one time for a community of players at your level. Many students do both: group classes for regular play, plus occasional private lessons when a specific stroke needs work." }
       },
       {
         "@type": "Question",
@@ -1131,6 +1131,16 @@ ul { list-style: none; }
   background: rgba(255,255,255,0.1);
   border-color: rgba(255,255,255,0.4);
   color: var(--white);
+}
+
+/* Footer disclaimer: lead-referral posture, sits above the copyright strip on every page. */
+.footer-disclaimer {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 20px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-bottom {
@@ -2643,7 +2653,6 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
       <ul class="nav-links" role="list">
         <li><a href="#services">Services</a></li>
         <li><a href="#why-us">About</a></li>
-        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -2665,7 +2674,6 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   <nav class="nav-mobile-menu" id="mobile-nav" aria-label="Mobile navigation">
     <a href="#services" onclick="closeMenu()">Services</a>
     <a href="#why-us" onclick="closeMenu()">About</a>
-    <a href="#reviews" onclick="closeMenu()">Reviews</a>
     <a href="#faq" onclick="closeMenu()">FAQ</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
     <a href="tel:+17782001462" onclick="closeMenu()" style="display:flex;align-items:center;gap:8px;">
@@ -3165,105 +3173,6 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
 <!-- ═══════════════════════════════════════════════════════════
      TESTIMONIALS — Horizontal scrolling carousel (8 cards)
 ═══════════════════════════════════════════════════════════ -->
-<section id="reviews" class="section-pad testimonial-variant-card-rail" aria-labelledby="reviews-heading">
-  <div class="container">
-    <div class="testimonials-header reveal">
-      <span class="section-eyebrow">What Vancouver Players Say</span>
-      <h2 class="section-title" id="reviews-heading">Real Students, Real Progress</h2>
-      <p class="section-subtitle">A handful of recent students from across Vancouver and the Lower Mainland on what their first few months of lessons looked like.</p>
-    </div>
-
-    <div class="testimonials-track" role="region" aria-label="Customer testimonials, scroll horizontally" tabindex="0">
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"Signed up to give myself a hobby after the kids left for university. The free first lesson was honest — I was awful — but my coach made it feel manageable. Six lessons in and I'm actually rallying."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">M</div>
-          <div>
-            <div class="author-name">Marisa C.</div>
-            <div class="author-location">Kitsilano</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"Wanted something more interesting than the gym. Booked a group class at Kits Beach and got matched with a coach who actually coaches — pricing is exactly what they quote, no surprises."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">D</div>
-          <div>
-            <div class="author-name">Daniel P.</div>
-            <div class="author-location">Mount Pleasant</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"Our nine-year-old went from refusing to try to begging us to drive her to practice. The coaches make it fun without dumbing it down. Best decision we've made for her this year."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">J</div>
-          <div>
-            <div class="author-name">Jordan M.</div>
-            <div class="author-location">Kerrisdale</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"Joined a group class to meet people after moving to Vancouver. Three months later I'm playing in a casual league with friends from the class. Wasn't expecting tennis to do that."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">A</div>
-          <div>
-            <div class="author-name">Aisha K.</div>
-            <div class="author-location">Yaletown</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"Played a bit in college, hadn't touched a racket in fifteen years. Booked a private lesson to work on my serve and walked out with three drills I still do. No hard sell on packages."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">S</div>
-          <div>
-            <div class="author-name">Stephen W.</div>
-            <div class="author-location">Marpole</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"Both kids did the junior program. The coaches genuinely care about technique and don't just run drills to fill the hour. Worth every dollar and the kids ask about it on weeknights."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">L</div>
-          <div>
-            <div class="author-name">Lisa T.</div>
-            <div class="author-location">Edgemont</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"Started with zero experience at 38. The adult beginner clinic met me exactly where I was. After six weeks I could actually keep a rally going — that felt like a real win."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">R</div>
-          <div>
-            <div class="author-name">Raj S.</div>
-            <div class="author-location">Brentwood</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="testimonial-card">
-        <blockquote class="testimonial-quote">"I'm 56 and was certain I'd be the oldest person on the court. Wrong — the adult clinic had a great mix of ages. The coach was patient and the class is something I look forward to every week."</blockquote>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true">H</div>
-          <div>
-            <div class="author-name">Helen O.</div>
-            <div class="author-location">Steveston</div>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
 
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -3310,7 +3219,7 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
       </details>
       <details class="faq-item">
         <summary><span>Should I start with private or group tennis lessons?</span><span class="faq-toggle-icon" aria-hidden="true">+</span></summary>
-        <div class="faq-answer-inner">Both work, and the right choice depends on what you want from tennis. Private lessons get you to specific technique goals faster because every minute on the court is on you. Group classes are more affordable and build a community of players at your level. Many students do both: group classes for regular play, plus occasional private lessons when a specific stroke needs work.</div>
+        <div class="faq-answer-inner">Both work, and the right choice depends on what you want from tennis. Private lessons get you to specific technique goals faster because every minute on the court is on you. Group classes trade some one-on-one time for a community of players at your level. Many students do both: group classes for regular play, plus occasional private lessons when a specific stroke needs work.</div>
       </details>
       <details class="faq-item">
         <summary><span>How many tennis lessons do I need to actually play?</span><span class="faq-toggle-icon" aria-hidden="true">+</span></summary>
@@ -3435,7 +3344,6 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
           <h4>Contact</h4>
           <ul>
             <li><a href="#hero">Book a Lesson</a></li>
-            <li><a href="#reviews">Reviews</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
           <p class="footer-hours">Mon–Fri 9am–9pm · Sat 7am–6pm · Sun by appointment</p>
@@ -3446,9 +3354,10 @@ body.feel-editorial-industrial { background: var(--color-bg); --hairline: #c8c7b
   </div>
 
   <div class="container">
+    <p class="footer-disclaimer">This site is a free service to assist players and parents in connecting with local tennis coaches. All coaches are independent and this site does not warrant or guarantee any lesson or instruction provided. It is the responsibility of the player or parent to verify that the coach they hire holds the certifications and insurance appropriate for the instruction being provided. All persons depicted in a photo or video are actors or models and not coaches listed on this site.</p>
     <div class="footer-bottom">
       <!-- Item 4: Privacy + Terms inline (single.html has no dedicated footer-col for them) -->
-      <span>&copy; 2026 Your Tennis Lessons Vancouver. Licensed &amp; Insured. · <a href="/privacy/" style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="/terms/" style="color:inherit;text-decoration:underline;">Terms</a></span>
+      <span>&copy; 2026 Your Tennis Lessons Vancouver. All rights reserved. · <a href="/privacy/" style="color:inherit;text-decoration:underline;">Privacy</a> · <a href="/terms/" style="color:inherit;text-decoration:underline;">Terms</a></span>
       <span>Vancouver, British Columbia, Canada</span>
     </div>
   </div>
